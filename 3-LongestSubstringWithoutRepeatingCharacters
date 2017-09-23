@@ -1,0 +1,24 @@
+"""
+不用max函数会多比20%的人快
+"""
+
+class Solution(object):
+    def lengthOfLongestSubstring(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        if (len(s) == 0):
+            return 0
+        maxr = 0
+        st = 0
+        d = {}
+        for i in range(0,len(s)):
+            if (s[i] in d) and (d[s[i]]>=st):
+                if (i - st > maxr):
+                    maxr = i - st
+                st = d[s[i]]+1
+            d[s[i]] = i
+        return max(maxr,i - st + 1)
+        
+                
