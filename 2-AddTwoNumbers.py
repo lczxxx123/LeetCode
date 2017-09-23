@@ -6,6 +6,16 @@
 """
 一开始慢是没注意到要求的返回值也是ListNode，返回了一个List
 b.next = b = ListNode(t%10)这种写法第一次学到
+
+T tusizi ：
+I found this Stack Overflow to find out the answer.
+
+n.next = n = ListNode(val) means first n.next = ListNode(val) then n point to the same address
+
+n = n.next = ListNode(val) means first n = ListNode(val) , now the n is ListNode(val), then n.next point to the address ListNode(val) which means point to itself!!!
+
+Hope this will help.
+
 """
 
 class Solution(object):
